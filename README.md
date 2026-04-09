@@ -1,2 +1,1 @@
-# FASTAPI_CURD_JSON
-JSON CURD IN FASTAPI's
+# ####### json data and crud operations ###########
