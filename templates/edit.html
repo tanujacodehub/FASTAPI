@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edit User</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>Edit User</h2>
+{% if request.query_params.get("message") %}
+<div class="alert">
+    {{ request.query_params.get("message") }}
+</div>
+{% endif %}
+<div class="form-container">
+
+<form action="/updateUser" method="post">
+
+<input type="hidden" name="index" value="{{ index }}">
+
+<label>Name</label>
+<input type="text" name="name" value="{{ user.name }}" required>
+
+<label>Email</label>
+<input type="email" name="email" value="{{ user.email }}" required>
+
+<!-- Button container -->
+<div class="btn-group">
+    <button type="submit">Update</button>
+    <button type="button" class="add-btn"
+            onclick="window.location.href='/'">
+        Cancel
+    </button>
+</div>
+</form>
+
+</div>
+
+</body>
+</html>
